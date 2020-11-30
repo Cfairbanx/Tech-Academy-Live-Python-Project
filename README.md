@@ -1,5 +1,5 @@
 # Tech-Academy-Live-Python-Project
-Simulated Team Work Environment
+    Team Work Environment
 
 ## Introduction
 
