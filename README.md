@@ -2,6 +2,7 @@
 Simulated Team Work Environment
 
 ## Introduction
+
 For the last nine days I participated in a simulated team work environment on a Django Python project. We were to each create our own web application all within the same master. Working within the same master was an excellent opportunity to learn version control systems, merging conflicts, migration conflicts and other team issues that you would come across in a working environment. We were alotted 2 weeks, 9 days as it spanned over the holiday Thanksgiving, to see how far we could make it through application construction stories. Each story progressively became more difficult in order to continue pushing our skills and problem solving mindset. I saw how a developer communicates and collaborates with their team in order to improve a product. I worked on the [back end stories](#back-end-stories) and [front end stories](#front-end-stories) of an application about plants, having a "green thumb" I felt right at home in creating something visually calming and appealing. I gained valuable real world experience and [skills](#other-skills-learned) that I intend to implement within my development career. 
 
 Below are descriptions and examples of the work that I completed, this is an app about plants that stores added plant information, allows you to sort through stored information and displays this information. 
@@ -17,6 +18,7 @@ Here is where I created a model for what information to store in the database. T
     from django.db import models
     
     # Limit the choices for growth type
+    
     GROWTH_CHOICES = (
         ('Trailing/Vining', 'Trailing/Vining'),
         ('Tree', 'Tree'),
@@ -24,19 +26,24 @@ Here is where I created a model for what information to store in the database. T
         ('Succulent', 'Succulent'),
         ('Fern', 'Fern'),
     )
+    
     # limit the choices for light needs
+    
     LIGHT_CHOICES = (
         ('Direct Light', 'Direct Light'),
         ('Bright Indirect Light', 'Bright Indirect Light'),
         ('Indirect Light', 'Indirect Light'),
     )
+    
     # define model
+    
     class Indoor_Plant(models.Model):
         plant_name = models.CharField(max_length=50)
         plant_growth = models.CharField(max_length=25, choices=GROWTH_CHOICES)
         plant_light = models.CharField(max_length=30, choices=LIGHT_CHOICES)
         plant_description = models.TextField(max_length=300)
         objects = models.Manager()
+        
     def __str__(self):
         return self.plant_name
         
@@ -44,6 +51,7 @@ After creating the model I created a form so that the user could have fields to 
 
     from django.forms import ModelForm
     from .models import Indoor_Plant
+    
     class Indoor_PlantForm(ModelForm):
         class Meta:
             model = Indoor_Plant
@@ -122,7 +130,7 @@ Here is the base HTML template that I created, all other html templates inherite
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>The Indoor Jungle</title>
         <!-- Links -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-                                                           TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static 'CSS/PlantApp_css.css' %}">
     </head>
     <body class="base_background">
@@ -161,8 +169,8 @@ Here is the base HTML template that I created, all other html templates inherite
                 <p>&copy; The Tech Academy <a>|</a> Author: Casey Fairbanks</p>
             </footer>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"                                  crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-                                                                      ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     </body>
     </html>
 
